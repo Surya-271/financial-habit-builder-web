@@ -1,0 +1,14 @@
+const jwt = require('jsonwebtoken');
+
+const generateToken = (id) => {
+  if (!process.env.JWT_SECRET) {
+    console.error('JWT_SECRET environment variable is missing.');
+    throw new Error('JWT_SECRET environment variable is missing.');
+  }
+
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: '30d',
+  });
+};
+
+module.exports = generateToken;
