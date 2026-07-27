@@ -1,0 +1,13 @@
+# http://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Allow: /login
+Allow: /register
+
+# Disallow internal backend API endpoints and admin routes from search indexing
+Disallow: /api/
+Disallow: /admin/
+Disallow: /verify-email
+Disallow: /forgot-password
+
+Sitemap: https://financehabit.app/sitemap.xml

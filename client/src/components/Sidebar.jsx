@@ -34,7 +34,7 @@ const Sidebar = ({ isOpen, onLinkClick }) => {
 
   // Define Navigation Items for Standard Users
   const userLinks = [
-    { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+    { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { path: '/income', label: 'Income Manager', icon: Wallet },
     { path: '/expenses', label: 'Expense Tracker', icon: TrendingDown },
     { path: '/habits', label: 'Habit Tracker', icon: CalendarDays },
@@ -68,7 +68,7 @@ const Sidebar = ({ isOpen, onLinkClick }) => {
     >
       {/* Brand Header */}
       <div className="px-6 py-5 border-b border-slate-100 dark:border-slate-800/80 flex items-center shrink-0">
-        <Link to={admin ? "/admin/dashboard" : "/"} className="flex items-center gap-2">
+        <Link to={admin ? "/admin/dashboard" : "/dashboard"} className="flex items-center gap-2">
           {/* Logo: Jar Icon Only */}
           <div className="w-10 h-10 shrink-0">
             <img src="/logo.png" alt="FinanceHabit Logo" className="w-full h-full object-contain animate-fade-in" />
@@ -91,7 +91,7 @@ const Sidebar = ({ isOpen, onLinkClick }) => {
               className={({ isActive }) =>
                 isActive ? 'sidebar-link-active' : 'sidebar-link'
               }
-              end={link.path === '/'}
+              end={link.path === '/dashboard'}
             >
               <Icon size={18} className="mr-3 flex-shrink-0" />
               <span>{link.label}</span>

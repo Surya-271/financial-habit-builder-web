@@ -28,7 +28,7 @@ const Login = () => {
     try {
       const res = await login(email, password);
       if (res.success) {
-        navigate('/');
+        navigate('/dashboard');
       }
     } catch (err) {
       if (err.message === 'Please verify your email first.') {
